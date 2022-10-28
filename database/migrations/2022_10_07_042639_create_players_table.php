@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePlayerTable extends Migration
+class CreatePlayersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -23,7 +23,8 @@ class CreatePlayerTable extends Migration
             $table->double('weight')->unsigned(true);
             $table->string('nation');
             $table->string('rank');
-            $table->tinyInteger('teamid')->unsigned(false);
+            $table->foreignId('teamid')->unsigned();
+            $table->foreign('teamid')->references('teamid')->on('teams')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
