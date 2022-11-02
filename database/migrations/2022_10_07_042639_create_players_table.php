@@ -24,7 +24,7 @@ class CreatePlayersTable extends Migration
             $table->string('nation');
             $table->string('rank');
             $table->foreignId('teamid')->unsigned();
-            $table->foreign('teamid')->references('teamid')->on('teams')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('teamid')->references('id')->on('teams')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

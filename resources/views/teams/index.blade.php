@@ -21,6 +21,26 @@
         </style>
     </head>
     <body class="antialiased">
-        建立球員的視圖(view)
+        <h1>建立球隊的視圖(view)</h1>
+        <table>
+            <tr>
+                <th>球隊編號</th>
+                <th>球隊</th>
+                <th>歷史</th>
+                <th>詳細資料</th>
+                <th>刪除球隊</th>
+            </tr>
+        @foreach($teams as $team)
+            <tr>
+                <td>{{ $team-> id}}</td>
+                <td>{{ $team-> team}}</td>
+                <td>{{ $team-> history}}</td>
+                <td><a href="{{route('teams.show',['id'=>$team->id])}}">詳細資料<a></td>
+                <td><a href="{{route('teams.destroy',['id'=>$team->id])}}">刪除球隊<a></td>
+            </tr>
+            </tr>
+        @endforeach
+        </table>
+            
     </body>
 </html>

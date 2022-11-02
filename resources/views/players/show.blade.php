@@ -21,6 +21,18 @@
         </style>
     </head>
     <body class="antialiased">
-        建立球員的視圖(view)
+        <h1>建立單一球員的視圖(view)</h1>
+        <h4>球員編號:{{ $players-> id}}</h4>
+        <h4>姓名:{{ $players-> name}}</h4>
+        <h4>背號:{{ $players-> number}}</h4>
+        <h4>站位:{{ $players-> location}}</h4>
+        <h4>投打習慣:{{ $players-> habit}}</h4>
+        <h4>身高:{{ $players-> height}}</h4>
+        <h4>體重:{{ $players-> weight}}</h4>
+        <h4>國籍:{{ $players-> nation}}</h4>
+        <h4>選秀順位:{{ $players-> rank}}</h4>
+        <h4>隊伍ID:{{ $players-> teamid}}</h4>
+        <h4>創建時間:{{ $players-> created_at}}</h4>
+        <h4>更新時間:{{ $players-> updated_at}}</h4>
     </body>
 </html>

@@ -48,7 +48,7 @@ class TeamsTableSeeder extends Seeder
             $coach = $this->generateRandomname();
             $random_datetime = Carbon::now()->subMinutes(rand(1, 55));
             DB::table('teams')->insert([
-                'teamid' => $i,
+                'id' => $i,
                 'team' => $randomTeam,
                 'history' => $history,
                 'leader' => $leader,

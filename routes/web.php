@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PlayersController;
-use App\Models\Players;
+use App\Http\Controllers\TeamsController;
+// use App\Models\Players;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,5 +21,11 @@ Route::get('/', function () {
 });
 
 Route::get('/players', [PlayersController::class, 'index'])->name('players.index');
+Route::get('/teams', [TeamsController::class, 'index'])->name('teams.index');
 
 
+Route::get('/players/{id}', [PlayersController::class, 'show'])->name('players.show');
+Route::get('/teams/{id}', [TeamsController::class, 'show'])->name('teams.show');
+
+Route::get('/players/delete/{id}', [PlayersController::class, 'destroy'])->where('id','[0-9]+')->name('players.destroy');
+Route::get('/teams/delete/{id}', [TeamsController::class, 'destroy'])->where('id','[0-9]+')->name('teams.destroy');

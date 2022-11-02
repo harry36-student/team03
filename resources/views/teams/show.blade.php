@@ -21,6 +21,14 @@
         </style>
     </head>
     <body class="antialiased">
-        建立球員的視圖(view)
+        <h1>建立單一球隊的視圖(view)</h1>
+        <h4>球隊編號:{{ $teams->id}}</h4>
+        <h4>球隊:{{ $teams-> team}}</h4>
+        <h4>歷史:{{ $teams-> history}}</h4>
+        <h4>領隊:{{ $teams-> leader}}</h4>
+        <h4>總教練:{{ $teams-> coach}}</h4>
+        <h4>主球場:{{ $teams-> home}}</h4>
+        <h4>創建時間:{{ $teams-> created_at}}</h4>
+        <h4>更新時間:{{ $teams-> updated_at}}</h4>
     </body>
 </html>
