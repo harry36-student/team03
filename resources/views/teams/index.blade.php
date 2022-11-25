@@ -23,7 +23,7 @@
         @foreach($teams as $team)
         
         <tr style="color:blue;">
-            <td>{{ $team->id }}</td>
+            <td>{{ $team->id}}</td>
             <td>{{ $team->team }}</td>
             <td>{{ $team->history }}</td>
             <td>{{ $team->leader }}</td>

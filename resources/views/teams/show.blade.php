@@ -5,16 +5,16 @@
 @section('cpbl_theme', '您所選取的球隊資料')
 
 @section('cpbl_contents')
-球隊編號：{{ $team->id }}<br/>
-球隊名字：{{ $team->team }}<br/>
-球隊歷史：{{ $team->history }}<br/>
-球隊領隊：{{ $team->leader }}<br/>
-球隊總教練:{{$team->coach}}<br/>
-球隊主場：{{ $team->home }}<br/>
+球隊編號：{{ $teams->id}}<br/>
+球隊名字：{{ $teams->team}}<br/>
+球隊歷史：{{ $teams->history }}<br/>
+球隊領隊：{{ $teams->leader }}<br/>
+球隊總教練:{{$teams->coach}}<br/>
+球隊主場：{{ $teams->home }}<br/>
 
 
 <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">
-    {{ $team->name }}所有球員
+    {{ $teams->name}}所有球員
 </div>
 <table>
     <tr>
