@@ -4,7 +4,7 @@
 </div>
 <div class="form-group">
     {!! Form::label('team', '所屬球隊：') !!}
-    {!! Form::select('team',$teams,['class' => 'form-control']) !!}
+    {!! Form::select('team',$teams,$teamSelected,['class' => 'form-control']) !!}
 </div>
 <div class="form-group">
     {!! Form::label('number','球員背號:')!!}

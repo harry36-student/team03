@@ -99,35 +99,16 @@ class PlayersController extends Controller
     }
     public function create()
     {
-        $teams = DB::table('teams')
-            ->select('teams.id', 'teams.team')
-            ->orderBy('teams.id', 'asc')
-            ->get();
-
-        $data = [];
-        foreach ($teams as $team)
-        {
-            $data[$team->id] = $team->team;
-        }
-        return view('players.create', ['teams' =>$data]);
+        $tags =Team::orderBy('teams.id','asc')->pluck('teams.team','teams.id');
+        return view('players.create', ['teams' =>$tags,'teamSelected'=>null]);
     }
 
     public function edit($id)
     {
-        $teams = DB::table('teams')
-            ->select('teams.id', 'teams.team')
-            ->orderBy('teams.id', 'asc')
-            ->get();
-
-        $data = [];
-        foreach ($teams as $team)
-        {
-            $data[$team->id] = $team->team;
-        }
-
         $player = Player::findOrFail($id);
-
-        return view('players.edit', ['player' =>$player, 'teams' => $data]);
+        $tags = Team::orderBy('teams.id','asc')->pluck('teams.team','teams.id');
+        $selected_tags =$player->team->id;
+        return view('players.edit', ['player' =>$player, 'teams' => $tags, 'teamSelected' => $selected_tags]);
     }
 
     public function show($id)
