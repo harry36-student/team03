@@ -3,13 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        
         <title>@yield('title')</title>
         
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
+        <link rel="stylesheet" href="/assets/css/main.css">
         <!-- Styles -->
         <style>
+            
             /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
             html{
                 line-height: 1.15;
@@ -19,7 +21,7 @@
             margin: 0
         }
         a {
-            background-color: transparent
+            background-color:#FFEFD5
         }
         [hidden] {
             display: none
@@ -38,7 +40,7 @@
         }
         svg, video {
             display: block;
-            vertical-align: middle
+            vertical-align: middle;
         }
         video {
             max-width: 100%;
@@ -56,7 +58,7 @@
         }
         .border-gray-200 {
             --border-opacity: 1;
-            border-color: #edf2f7;
+            border-color:#7DD7F7;
             border-color: rgba(237, 242, 247, var(--border-opacity))
         }
         .border-t {
@@ -309,10 +311,11 @@
     <style>
         body {
             font-family: 'Nunito';
+            background-color: '#7DCBE7';
         }
     </style>
 </head>
-<body class="antialiased">
+<body bgcolor="#0000FF" class="antialiased">
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -324,14 +327,17 @@
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                 @endif
+
             @endif
         </div>
     @endif
 
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
+        
         <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
-            <img src={{ URL::asset('images/logo.png')}} width="100%"/>
+            <img src ={{ URL::asset('images/logo.png')}} width="100%"/>
         </div>
+
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
             <div class="grid grid-cols-2 md:grid-cols-1">
                 <div class="p-6">
