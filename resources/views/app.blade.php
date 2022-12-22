@@ -13,15 +13,13 @@
         <style>
             
             /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
-            html{
+        html{
                 line-height: 1.15;
                 -webkit-text-size-adjust: 100%
             }
-            body {
-            margin: 0
-        }
+        body{ background-color:indianred}
         a {
-            background-color:#FFEFD5
+            background-color:#FFDBDF
         }
         [hidden] {
             display: none
@@ -279,7 +277,7 @@
                 padding-right: 2rem
             }
         }
-        @media (prefers-color-scheme: dark) {
+        @media (prefers-color-scheme: white) {
             .dark\:bg-gray-800 {
                 --bg-opacity: 1;
                 background-color: #2d3748;
@@ -295,7 +293,7 @@
                 border-color: #4a5568;
                 border-color: rgba(74, 85, 104, var(--border-opacity))
             }
-            .dark\:text-white {
+            .dark\:text-blue {
                 --text-opacity: 1;
                 color: #fff;
                 color: rgba(255, 255, 255, var(--text-opacity))
@@ -311,11 +309,15 @@
     <style>
         body {
             font-family: 'Nunito';
-            background-color: '#7DCBE7';
+            background-color:lightcoral;
         }
+        .body{
+            background-color: #1769F7;
+        }
+        
     </style>
 </head>
-<body bgcolor="#0000FF" class="antialiased">
+<body  class="antialiased">
 <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
     @if (Route::has('login'))
         <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
@@ -332,15 +334,15 @@
         </div>
     @endif
 
-    <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
-        
+    <divback class="max-w-6xl mx-auto sm:px-6 lg:px-8">    
+
         <div class="flex justify-center pt-8 sm:justify-start sm:pt-0">
             <img src ={{ URL::asset('images/logo.png')}} width="100%"/>
         </div>
 
-        <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
+        <div class="mt-8 bg-blue dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
             <div class="grid grid-cols-2 md:grid-cols-1">
-                <div class="p-6">
+                <div  class="p-6">
                     @include('header')
                 </div>
                 <div class="p-6 border-t border-gray-200 dark:border-gray-700 md:border-t-0 md:border-l">

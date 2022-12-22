@@ -12,7 +12,7 @@ class PlayersController extends Controller
 {
     public function index()
     {
-        $players = Player::all();
+        $players = Player::paginate(25);
         $locations = Player::allPositions()->get();
         $data = [];
         foreach ($locations as $location)
@@ -21,10 +21,19 @@ class PlayersController extends Controller
         }
         return view('players.index', ['players' => $players, 'locations'=>$data]);
     }
+
+
+    public function nation(){
+        
+        $nations = Player::nation()->get();
+        return view('players.index', ['players' => $nations]);
+    }
+
     public function api_players()
     {
         return Player::all();
     }
+
     public function api_update(Request $request)
     {
         $player = Player::find($request->input('id'));

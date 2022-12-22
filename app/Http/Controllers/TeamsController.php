@@ -119,4 +119,9 @@ class TeamsController extends Controller
         $teams->delete();
         return redirect('teams');
     }
+
+    public function locoat(){
+        $teams = Team::zone('國籍')->get();
+        return view('teams.index', ['teams' => $teams]);
+    }
 }

@@ -37,6 +37,9 @@ Route::get('teams/create', [TeamsController::class, 'create'])->name('teams.crea
 // 新增資料
 Route::post('teams/store', [TeamsController::class, 'store'])->name('teams.store');
 
+Route::post('teams/nation', [TeamsController::class, 'nation'])->name('teams.nation');
+
+
 // 顯示單筆球隊資料
 Route::get('teams/{id}', [TeamsController::class, 'show'])->where('id', '[0-9]+')->name('teams.show');
 // 修改表單
@@ -62,7 +65,9 @@ Route::get('players', [PlayersController::class, 'index'])->name('players.index'
 Route::post('players/location', [PlayersController::class, 'location'])->name('players.location');
 // 新增表單
 Route::get('players/create', [PlayersController::class, 'create'])->name('players.create');
-// 顯示單筆球隊資料
+// 新增國籍
+Route::get('players/nation', [PlayersController::class, 'nation'])->name('players.nation');
+// 顯示單筆球員資料
 Route::get('players/{id}', [PlayersController::class, 'show'])->where('id', '[0-9]+')->name('players.show');
 // 修改表單
 Route::get('players/{id}/edit', [PlayersController::class, 'edit'])->where('id', '[0-9]+')->name('players.edit');
@@ -72,3 +77,4 @@ Route::post('players/store', [PlayersController::class, 'store'])->name('players
 Route::patch('players/update/{id}', [PlayersController::class, 'update'])->where('id', '[0-9]+')->name('players.update');
 // 刪除資料
 Route::delete('players/delete/{id}', [PlayersController::class, 'destroy'])->where('id', '[0-9]+')->name('players.destroy');
+

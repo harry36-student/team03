@@ -3,6 +3,5 @@
         歡迎光臨 中華職棒 網站 
         Wellcome to CPBL website! 
         this website is first edition
-
     </div>
 </div>

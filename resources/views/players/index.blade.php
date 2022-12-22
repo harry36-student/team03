@@ -9,6 +9,8 @@
     <div class="p-6 border-t border-orange-500 dark:border-gray-700 md:border-t-0 md:border-l">
         <a style="color:royalblue" href="{{ route('players.create') }} ">新增球員</a>
         <a style="color:royalblue" href="{{ route('players.index') }} ">所有球員</a>
+        <a style="color:royalblue" href="{{ route('players.nation') }} ">國籍</a>
+        
     </div>
 
     <table>
@@ -28,7 +30,7 @@
         </tr>
         
         @foreach($players as $player)
-            <tr style="color:Violet;">
+            <tr style="color:#6A5ACD;">
                 <td>{{ $player->id }}</td>
                 <td>{{ $player->name }}</td>
                 <td>{{ $player->number }}</td>
@@ -51,5 +53,7 @@
             </tr>
         @endforeach
     </table>
-
+    
+         $players->links() 
+       
 @endsection

@@ -29,4 +29,8 @@ class Team extends Model
         $this->players()->delete();
         return parent::delete();
     }
+    public function scopeZone($query,$zone)
+    {
+        $query->where('zone', '=', $zone);
+    }
 }
