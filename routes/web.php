@@ -1,8 +1,12 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\PlayersController;
+use App\Http\Controllers\TeamsController;
+use App\Http\Controllers\UserController;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes

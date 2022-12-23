@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\CreatePlayerRequest;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
 use App\Models\Player;
 use App\Models\Team;
@@ -19,14 +20,20 @@ class PlayersController extends Controller
         {
             $data["$location->$location"] = $location->location;
         }
-        return view('players.index', ['players' => $players, 'locations'=>$data]);
+        return view('players.index', ['players' => $players, 'locations'=>$data,'showPagination' => true]);
     }
 
 
     public function nation(){
         
         $nations = Player::nation()->get();
-        return view('players.index', ['players' => $nations]);
+        $locations = Player::allPositions()->get();
+        $data = [];
+        foreach ($locations as $location)
+        {
+            $data["$location->$location"] = $location->location;
+        }
+        return view('players.index', ['players' => $nations,'locations'=>$data,'showPagination' => false]);
     }
 
     public function api_players()
@@ -83,7 +90,7 @@ class PlayersController extends Controller
             }
         }
         public function senior()
-    {
+        {
         $players = Player::senior()->get();
         $locations = Player::allPositions()->get();
         $data = [];
@@ -104,7 +111,7 @@ class PlayersController extends Controller
         {
             $data["$location->location"] = $location->location;
         }
-        return view('players.index', ['players' => $players, 'location'=>$data]);
+        return view('players.index', ['players' => $players, 'locations'=>$data,'showPagination' => false]);
     }
     public function create()
     {

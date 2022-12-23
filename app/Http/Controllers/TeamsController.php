@@ -6,6 +6,7 @@ use App\Http\Requests\CreateTeamRequest;
 use Illuminate\Http\Request;
 use App\Models\Team;
 use Carbon\Carbon;
+use Illuminate\Routing\Controller;
 
 
 class TeamsController extends Controller

@@ -27,23 +27,21 @@ class Player extends Model
     {
         return $this->belongsTo('App\Models\Team', 'teamid', 'id');
     }
-
     public function scopeAllPositions($query)
     {
-        
         $query->select('location')->groupBy('location');
-    
     }
-
-
     public function scopePosition($query, $pos)
     {
         $query->where('location', '=', $pos);
 
     }
-   
     public function scopenation($query)
     {
         $query->orderBy('nation');
+    }
+    public function scopelocation($query, $pos)
+    {
+        $query->where('location', '=', $pos);
     }
 }

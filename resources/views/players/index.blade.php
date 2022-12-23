@@ -10,7 +10,13 @@
         <a style="color:royalblue" href="{{ route('players.create') }} ">新增球員</a>
         <a style="color:royalblue" href="{{ route('players.index') }} ">所有球員</a>
         <a style="color:royalblue" href="{{ route('players.nation') }} ">國籍</a>
-        
+        <form action="{{ url('players/location') }}" method='POST'>
+                {!! Form::label('pos', '選取站位：') !!}
+                {!! Form::select('pos', $locations, ['class' => 'form-control']) !!}
+            <input class="btn btn-default" type="submit" value="查詢"/>
+            @csrf
+        </form>
+
     </div>
 
     <table>
@@ -53,7 +59,9 @@
             </tr>
         @endforeach
     </table>
-    
-         $players->links() 
-       
+    @if($showPagination)
+        {{$players->links()}}
+    @endif
+   
+
 @endsection
