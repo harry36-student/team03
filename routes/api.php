@@ -34,4 +34,5 @@ Route::group(['middleware' => 'auth:sanctum'], function () {
     Route::patch('players', [PlayersController::class, 'api_update']);
     // 刪除指定球員
     Route::delete('players', [PlayersController::class, 'api_delete']);
+
 });
